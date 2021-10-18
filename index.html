@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="./index.css" />
+
+</head>
+<body>
+
+<h1>Booking Reservation Form</h1>
+
+<div class="container">
+  <form>
+    <label for="name"><b>Name</b></label>
+    <input type="text" id="name" name="name" placeholder="Your name.." required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="email" id="email" name="email" placeholder="Enter your email.." required><br>
+
+
+    <h4>Pick a date</h4>
+    <div id="containerOne">
+    <div id="date">
+        <!-- <input type="text" name="month" id="month" placeholder="MM" size="10"  required /><br> -->
+        <select name="month" id="month" style="color:gray;">
+            <option value="mm">MM</option>
+            <option value="january">January</option>
+            <option value="february">February</option>
+            <option value="march">March</option>
+            <option value="april">April</option>
+            <option value="may">May</option>
+            <option value="june">June</option>
+            <option value="july">July</option>
+            <option value="August">August</option>
+            <option value="september">September</option>
+            <option value="october">October</option>
+            <option value="november">November</option>
+            <option value="December">December</option>
+        </select>
+        
+        <!-- <input type="text" name="day" id="day" placeholder="DD" size="10" required /><br> -->
+        <select name="day" id="day" style="color:gray;">
+            <option value="dd">DD</option>
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+            <option value="four">4</option>
+            <option value="five">5</option>
+            <option value="six">6</option>
+            <option value="seven">7</option>
+            <option value="eight">8</option>
+            <option value="nine">9</option>
+            <option value="ten">10</option>
+            <option value="eleven">11</option>
+            <option value="twelve">12</option>
+            <option value="thirteen">13</option>
+            <option value="fourteen">14</option>
+            <option value="fifteen">15</option>
+            <option value="sixteen">16</option>
+            <option value="seventeen">17</option>
+            <option value="eighteen">18</option>
+            <option value="nineteen">19</option>
+            <option value="twenty">20</option>
+            <option value="twentyOne">21</option>
+            <option value="twentyTwo">22</option>
+            <option value="twentyThree">23</option>
+            <option value="twentyFour">24</option>
+            <option value="twentyFive">25</option>
+            <option value="twentySix">26</option>
+            <option value="twentySeven">27</option>
+            <option value="twentyEight">28</option>
+            <option value="twentyNine">29</option>
+            <option value="thirty">30</option>
+        </select>
+
+
+        <input type="text" name="year" id="year" placeholder="YYYY" size="10" required /><br>
+    </div>
+    <h4>Pick a time</h4><br>
+        <div id="time">
+            <input type="text" name="hour" id="hour" placeholder="09" size="10" required /> <br>
+            <input type="text" name="minuite" id="minuite" placeholder="00" size="10" required /><br>
+        <select name="am" id="am">
+            <option value="am">AM</option>
+            <option value="am">PM</option>
+        </select>
+        </div>
+       </div>
+
+<div id= "counterControl">
+    <button id="buttonDecrease">-</button>
+     <input type="text" id= "qtyBox" readonly="" value="0"> 
+    <!-- <h2 id = "qtyBox">0</h2> -->
+    <button id="buttonIncrease">+</button>
+</div>
+
+       <hr id="line" style="height:1px;width:500px;color:gray;background-color:gray">
+     
+    <button id="button">MAKE RESERVATION</button>
+    
+  </form>
+</div>
+
+
+<script type= "text/javascript">
+    let addBtn = document.querySelector("#buttonIncrease");
+    let subBtn = document.querySelector("#buttonDecrease");
+    let qty = document.querySelector("#qtyBox");
+    addBtn.addEventListener('click'   ,()=>{
+        qty.value = parseInt(qty.value) + 1;
+    });
+    subBtn.addEventListener('click', ()=>{
+        if (qty.value <= 0){
+            qty.value = 0;
+        }else{
+         qty.value = parseInt (qty.value) - 1;
+        }
+        
+    });
+ </script>
+
+
+</body>
+</html>
+
+
+
